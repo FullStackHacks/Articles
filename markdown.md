@@ -8,9 +8,9 @@ What is Markdown?
 Markdown is a unique markup language that can easily be compiled to HTML. Markdown 
 was designed to be easy to write, but also easy to read in its raw form; meaning 
 that markdown is great for publishing content on the internet with.
-[John Grubber ][ John Gruber Wiki ] invented markdown and intiailly released it
+[John Grubber ][ John Grubber Wiki ] invented markdown and intiailly released it
 in about 2004, he has a great blog called [Daring Fireball][Daring Fireball]. 
-[Aaron Swartz][Aaron Swart Wiki] had a lot of influence of the syntax of markup.
+[Aaron Swartz][Aaron Swartz Wiki] had a lot of influence of the syntax of markup.
 For those who don't know who Aaron Swartz is, he was one of the founders of Reddit.
 Swartz is also one of the most well known Hacktavist and has incredibly sad story.
 There is a great documentary on his life that I highly recommend called [The Internet's
@@ -213,6 +213,7 @@ Adam Collins
 
 
 [John Gruber Wiki]: https://en.wikipedia.org/wiki/John_Gruber
+[Aaron Swartz Wiki]: https://en.wikipedia.org/wiki/Aaron_Swartz
 [Daring Fireball Markdown Intro]: https://daringfireball.net/projects/markdown/
 [Daring Fireball Markdown Editor]: https://daringfireball.net/projects/markdown/dingus
 [Daring Fireball Markdown Syntax]: https://daringfireball.net/projects/markdown/syntax#overview
