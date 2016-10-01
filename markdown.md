@@ -9,8 +9,10 @@ Markdown is a unique markup language that can easily be compiled to HTML. Markdo
 was designed to be easy to write, but also easy to read in its raw form; meaning 
 that markdown is great for publishing content on the internet with.
 [John Gruber][John Gruber Wiki] invented markdown and intiailly released it
-in about 2004, he has a great blog called [Daring Fireball][Daring Fireball]. 
-[Aaron Swartz][Aaron Swartz Wiki] had a lot of influence of the syntax of markup.
+in 2004. If you want to learn more about John Gruber he has a great blog
+has a great blog [Daring Fireball][Daring Fireball].
+[Aaron Swartz][Aaron Swartz Wiki] worked with Gruber to help create the easy-to-read 
+and easy-to-write syntax of markup.
 For those who don't know who Aaron Swartz is, he was one of the founders of Reddit.
 Swartz is also one of the most well known Hacktavist and has incredibly sad story.
 There is a great documentary on his life that I highly recommend called [The Internet's
@@ -20,7 +22,7 @@ Own Boy] [Internet's Own Boy].
 Basic Syntax
 ------------
 
-Markdown makes doing all the things needed for online publish extermely easy.
+Markdown's goal is to make doing all the things needed for online publishing easy.
 
 ### Headers ###
 
@@ -35,7 +37,7 @@ Headers can be declared in a several ways. Using # like this
 ###### h6
 ```
 
-Alternatively these headers can eb escaped like this.
+Alternatively these headers can be closed like this
 
 ```markdown
 # h1 #
@@ -57,7 +59,7 @@ That line would then be complied to
 <h6> h6 </h6>
 ```
 
-Alternatively h1 tags can be with "=" used as an underline and h2 can be declared
+Alternatively h1 tags can be declared with "=" used as an underline and h2 can be declared
 with '-'
 
 ```markdown
@@ -67,7 +69,7 @@ h2
 --
 ```
 
-That line would then be complied to
+This would be complied to
 
 ```html
 <h1> h1 </h1>
@@ -76,7 +78,7 @@ That line would then be complied to
 
 ### Links ###
 
-One of the most useful features of markdown is the ability to easily write link
+One of the most useful features of markdown is the ability to easily write links inline with your
 text. In HTML if I wanted to add a link around text it would look something like
 this
 
@@ -122,14 +124,14 @@ Images have the same syntax as links, except the link is prepended with an \!
 
 ### Code Blocks ###
 
-Often markdown is used to write about programming, and there's an easy way to include
-code blocks with syntax highlighting. By opening a block with three back-ticks (\`\`\`\)
-and closing with the same three back-ticks a code block can be declared
+Code block are a key feature of markdown. A code block can be declared by
+By opening a block with three back-ticks (\`\`\`\)
 
     ```
     my code blcok
     ```
 
+Code blocks are useful when trying to include code snippets in text.
 To incorporate syntax highlighting add the name of the language next to the back-ticks
 like so
 
@@ -190,6 +192,47 @@ Ordered list can be declared by using writing (number)(period). Example
 > 1. item2
 > 1. item3
 > ```
+
+### Emphasis ###
+
+Text can be easily emphasised with \_ or  \*. This makes it easy to bold and/or
+italize text. Italized text is doen by opening and closign with one underscore or astick.
+Bold text requries two underscores or astricks. Bold Italized text is three underscores
+or three astricks
+
+_italics_
+
+```markdown
+_italics_
+```
+or
+
+```markdown
+*italics*
+```
+
+__bold__
+
+```markdown
+__bold__
+```
+or
+
+```markdown
+**bold**
+```
+
+___bold italics___
+
+```markdown
+___bold italics___
+```
+or
+
+```markdown
+***bold italics***
+```
+
 
 ### Extra ###
 
