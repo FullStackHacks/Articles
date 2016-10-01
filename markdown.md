@@ -8,7 +8,7 @@ What is Markdown?
 Markdown is a unique markup language that can easily be compiled to HTML. Markdown 
 was designed to be easy to write, but also easy to read in its raw form; meaning 
 that markdown is great for publishing content on the internet with.
-[John Grubber ][ John Grubber Wiki ] invented markdown and intiailly released it
+[John Gruber ][ John Gruber Wiki ] invented markdown and intiailly released it
 in about 2004, he has a great blog called [Daring Fireball][Daring Fireball]. 
 [Aaron Swartz][Aaron Swartz Wiki] had a lot of influence of the syntax of markup.
 For those who don't know who Aaron Swartz is, he was one of the founders of Reddit.
@@ -195,7 +195,7 @@ Ordered list can be declared by using writing (number)(period). Example
 
 There's a lot more you can do with markdown that wasn't covered in this article.
 If you interested in learning more about markdown [this is the best article I found
-on the markdup language][Daring Fireball Markdown Syntax]; it's writtne by John Grubber
+on the markdup language][Daring Fireball Markdown Syntax]; it's writtne by John Gruber
 and goes deeper into the little intricices of markdown. Another great reference
 is [this cheat sheet][Cheat sheet]
 
