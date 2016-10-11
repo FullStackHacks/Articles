@@ -1,0 +1,8 @@
+instrumentation:
+    root: src
+    extensions: ['.js', '.jsx']
+    excludes: ['**/lib/**']
+reporting:
+    dir: ./coverage
+    reports:
+      -lcov
