@@ -1,14 +1,19 @@
 import { List } from 'immutable';
+import {
+  ADD_TODO,
+  ARCHIVE_TODO,
+  UPDATE_TODO,
+} from '../actions/todoActions';
 
-export default todoReducer function(state, action) {
+export default function todoReducer(state, action) {
 
   switch(action.type) {
     case ADD_TODO:
       return addTodo(state, action.payload);
     case ARCHIVE_TODO:
-      return remvoeTodo(state, action.payload);
-    case EDIT_TODO:
-      return addTodo(state, action.payload);
+      return archiveTodo(state, action.payload);
+    case UPDATE_TODO:
+      return updateTodo(state, action.payload);
     default:
       return state;
   }
@@ -34,26 +39,29 @@ function archiveTodo(state, payload) {
   let todoId = payload.id;
 
   const archiveList = state.get('archived', new List());
+  const todoList = state.get('todos', new List());
 
-  const todo = stete.getIn(['todos', todoId]);
-  const updatedTodoList = state.delete(todoId);
+  if(todoList.size == 0) return state;
 
-  const updateArchiveList = state.push(todo);
+  const todo = state.getIn(['todos', todoId]);
+  const updatedTodoList = todoList.delete(todoId);
+
+  const updateArchiveList = archiveList.push(todo);
 
 
-  return satte.set("archivad", updateArchiveList)
+  return state.set("archived", updateArchiveList)
               .set('todos', updatedTodoList);
 
 
 }
 
 
-function editTodo(state, payload) {
+function updateTodo(state, payload) {
 
-  let updatedTodo = payload.update;
+  let updatedTodo = payload.updatedTodo;
   let todoId = payload.id;
 
 
-  return state.setIn(['todos', todoId], updatedTodoList);
+  return state.setIn(['todos', todoId], updatedTodo);
 
 }

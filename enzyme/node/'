@@ -66,26 +66,4 @@ describe('src/reducers/     todoReducer.js', () => {
 
   });
 
-  it('EDIT_TODO removes todo from todos and puts it on the archved list', () => {
-
-    let todo = "Get an B in DataStructures";
-
-    const initialState = fromJS({
-      todos: [todo]
-    });
-
-    let editedTodo = "Get an A in DataStructures";
-
-    let action = updateTodoAction(0, editedTodo);
-
-    const newState = todoReducer(initialState, action);
-
-    const expectedState = fromJS({
-      todos: [editedTodo],
-    });
-
-    expect(newState).to.equal(expectedState);
-
-  });
-
 });
