@@ -40,7 +40,10 @@ describe('src/components/TodoPage/     <TodoListContainer />', () => {
   it('Todo list containts TodoList dumb component', () => {
 
 
-    let todoList = TestUtils.scryRenderedComponentWithType(TodoList);
+    let todoList = TestUtils.findRenderedComponentWithType(
+      todoListContainer,
+      TodoList
+    );
 
     expect(todoList).to.not.equal(undefined);
     expect(todoList.props.todos).to.equal(initialState.get('todos'));
