@@ -13,7 +13,7 @@ import TodoList from '../../../../src/components/TodoPage/TodoList';
 describe('src/components/TodoPage/     <TodoListContainer />', () => {
 
   let todoListContainer;
-  const initialState;
+  let initialState;
 
   before( () => {
 
@@ -21,7 +21,7 @@ describe('src/components/TodoPage/     <TodoListContainer />', () => {
       todos:['Clean my room', 'Do homework', 'Thanks my parents for my life']
     });
 
-    store = createStore(rootReducer, initialState);
+    let store = createStore(rootReducer, initialState);
 
     todoListContainer = TestUtils.renderIntoDocument(
       <Provider store={store}>
@@ -31,13 +31,8 @@ describe('src/components/TodoPage/     <TodoListContainer />', () => {
 
   });
 
-  it('Todo list contains todo props', () => {
 
-    expect(todoListContainer.props.todos).to.equal(initialState.get('todos'));
-
-  });
-
-  it('Todo list containts TodoList dumb component', () => {
+  it('Todo list containts TodoList dumb component and passes in correct props', () => {
 
 
     let todoList = TestUtils.findRenderedComponentWithType(

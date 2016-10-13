@@ -12,7 +12,7 @@ import TodoList from '../../../../src/components/TodoPage/TodoList';
 describe('src/components/TodoPage/     <TodoList />', () => {
 
   let todoList;
-  const initialState;
+  let initialState;
 
   before( () => {
 
@@ -20,7 +20,7 @@ describe('src/components/TodoPage/     <TodoList />', () => {
       todos:['Clean my room', 'Do homework', 'Thanks my parents for my life']
     });
 
-    store = createStore(rootReducer, initialState);
+    let store = createStore(rootReducer, initialState);
 
     todoList = TestUtils.renderIntoDocument(
       <TodoList
@@ -47,11 +47,12 @@ describe('src/components/TodoPage/     <TodoList />', () => {
     expect(ul).to.not.equal(undefined);
 
     let todos = TestUtils.scryRenderedDOMComponentsWithTag(
-      ul,
+     todoList,
       'li'
     );
 
     expect(todos.length).to.equal(3);
+    expect(ul.children.length).to.equal(3);
 
   });
 
