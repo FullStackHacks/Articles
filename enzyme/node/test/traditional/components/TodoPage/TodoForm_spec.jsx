@@ -31,7 +31,7 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
 
     todoForm = TestUtils.renderIntoDocument(
       <TodoForm
-        submitHandle={submitHandler}
+        submitHandler={submitHandler}
       />
     );
 
@@ -39,7 +39,7 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
 
   it('Form contains correct props', () => {
 
-    expect(todoList.props.todos).to.deep.equal({submitHandler:submitHandler});
+    expect(todoForm.props).to.deep.equal({submitHandler:submitHandler});
 
   });
 
@@ -76,9 +76,9 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
 
     let btn = TestUtils.findRenderedDOMComponentWithTag(
       todoForm,
-      'button'
+      'form'
     );
-    React.TestUtils.Simulat.click(btn);
+    TestUtils.Simulate.submit(btn);
 
     expect(wasClicked).to.be.true;
 
