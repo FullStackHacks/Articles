@@ -14,14 +14,16 @@ describe('src/components/TodoPage/     <TodoFormContainer />', () => {
 
   let todoFormContainer;
   let initialState;
+  let store;
 
   before( () => {
 
     initialState = fromJS({
-      todos:['Clean my room', 'Do homework', 'Thanks my parents for my life']
+      todos:['Clean my room', 'Do homework', 'Thanks my parents for my life'],
+      inputValue: 'hello'
     });
 
-    let store = createStore(rootReducer, initialState);
+    store = createStore(rootReducer, initialState);
 
     todoFormContainer = TestUtils.renderIntoDocument(
       <Provider store={store}>
@@ -44,7 +46,9 @@ describe('src/components/TodoPage/     <TodoFormContainer />', () => {
     expect(todoForm.props.todos).to.equal(initialState.get('todos'));
     expect(todoForm.props.submitHandler).to.equal(todoFormContainer.submitHandler);
     expect(todoForm.props.inputChangeHandler).to.equal(todoFormContainer.inputChangeHandler);
-    expect(todoForm.props.inputValue).to.equal(todoFormContainer.inputValue);
+    expect(todoForm.props.inputValue).to.equal(todoFormContainer.props.inputValue);
+
+    expect(todoFormContainer.props.inputValue).to.eqqual('hello');
 
   });
 

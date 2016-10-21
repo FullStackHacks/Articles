@@ -37,8 +37,9 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
 
     todoForm = TestUtils.renderIntoDocument(
       <TodoForm
-        submitInputHandler={submitHandler}
+        submitHandler={submitHandler}
         inputChangeHandler={inputChangeHandler}
+        inputValue="hello"
       />
     );
 
@@ -76,15 +77,30 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
 
     expect(wasClicked).to.be.false;
 
-    let btn = TestUtils.findRenderedDOMComponentWithTag(
+    let form = TestUtils.findRenderedDOMComponentWithTag(
       todoForm,
       'form'
     );
-    TestUtils.Simulate.submit(btn);
+    TestUtils.Simulate.submit(form);
 
     expect(wasClicked).to.be.true;
 
-    /** BROKEN 
+
+  });
+
+  it('value is controlled by prop', () => {
+
+    let input = TestUtils.findRenderedDOMComponentWithTag(
+      todoForm,
+      'input'
+    );
+
+    expect(input.value).to.equal('hello');
+
+  });
+
+  it('input change is properly called', () => {
+
 
     expect(inputChange).to.be.false;
 
@@ -96,9 +112,6 @@ describe('src/components/TodoPage/     <TodoForm />', () => {
     TestUtils.Simulate.change(input);
 
     expect(inputChange).to.be.true;
-
-     **/
-
 
   });
 

@@ -4,12 +4,13 @@ import rootReducer from '../../../../src/reducers/todoReducer';
 import { fromJS } from 'immutable';
 import { createStore } from 'redux';
 import { expect } from 'chai';
-import TestUtils from 'react-addons-test-utils';
 import TodoList from '../../../../src/components/TodoPage/TodoList';
 
+import { mount } from 'enzyme';
 
 
-describe('src/components/TodoPage/     <TodoList />', () => {
+
+describe('ENZYME    src/components/TodoPage/     <TodoList />', () => {
 
   let todoList;
   let initialState;
@@ -22,7 +23,7 @@ describe('src/components/TodoPage/     <TodoList />', () => {
 
     let store = createStore(rootReducer, initialState);
 
-    todoList = TestUtils.renderIntoDocument(
+    todoList = mount(
       <TodoList
         todos={initialState.get('todos')}
       />
@@ -32,27 +33,21 @@ describe('src/components/TodoPage/     <TodoList />', () => {
 
   it('Todo list contains todo props', () => {
 
-    expect(todoList.props.todos).to.equal(initialState.get('todos'));
+    console.log(todoList.props());
+    expect(todoList.prop('todos')).to.equal(initialState.get('todos'));
 
   });
 
   it('Todo list containts TodoList dumb component', () => {
 
 
-    let ul = TestUtils.findRenderedDOMComponentWithTag(
-      todoList,
-      'ul'
-    );
+    let ul = todoList.find( 'ul');
 
     expect(ul).to.not.equal(undefined);
 
-    let todos = TestUtils.scryRenderedDOMComponentsWithTag(
-     todoList,
-      'li'
-    );
+    let todos =  ul.find('li');
 
     expect(todos.length).to.equal(3);
-    //expect(ul.children.length).to.equal(3); // Fails
 
   });
 

@@ -3,6 +3,7 @@ import {
   ADD_TODO,
   ARCHIVE_TODO,
   UPDATE_TODO,
+  INPUT_CHANGE,
 } from '../actions/todoActions';
 
 export default function todoReducer(state, action) {
@@ -14,6 +15,8 @@ export default function todoReducer(state, action) {
       return archiveTodo(state, action.payload);
     case UPDATE_TODO:
       return updateTodo(state, action.payload);
+    case INPUT_CHANGE:
+      return inputChange(state, action.payload);
     default:
       return state;
   }
@@ -63,5 +66,13 @@ function updateTodo(state, payload) {
 
 
   return state.setIn(['todos', todoId], updatedTodo);
+
+}
+
+
+function inputChange(tate, payload) {
+
+  let value = payload.value;
+  return state.set('inputValue', value);
 
 }

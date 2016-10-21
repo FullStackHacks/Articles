@@ -1,9 +1,9 @@
 import React from 'react';
 import { expect } from 'chai';
 import TestUtils from 'react-addons-test-utils';
-import TodoPage from '../../../../src/pages/TodoPage';
-import TodoFormContainer from '../../../../src/components/TodoPage/TodoFormContainer';
-import TodoListContainer from '../../../../src/components/TodoPage/TodoListContainer';
+import TodoPage from '../../../src/pages/TodoPage';
+import TodoFormContainer from '../../../src/components/TodoPage/TodoFormContainer';
+import TodoListContainer from '../../../src/components/TodoPage/TodoListContainer';
 
 
 describe('src/pages/     <TodoPage />', () => {

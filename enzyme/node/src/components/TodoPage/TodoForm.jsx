@@ -13,7 +13,7 @@ class TodoForm extends React.Component {
 
     return (
       <form onSubmit={this.props.submitHandler}>
-        <input onChange={this.props.inputChangeHandler} type="text" id="newTodo" />
+        <input value={this.props.inputValue} onChange={this.props.inputChangeHandler} type="text" id="newTodo" />
         <button type="submit"> Add Todo </button>
       </form>
     );
